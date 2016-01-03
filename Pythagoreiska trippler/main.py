@@ -1,18 +1,16 @@
-# Hello World program in Python
-
+# Primitive pythagorean triples program in Python
+# (c) 2016 Edward Krogius
+# 
+# Take odd integers 0 < m < n 
+# if m < N then if gcd(m,n) != 1 print (n+m)(n-m)/2, nm, (n+m)(n+m)/2 - nm
+#
 import math
 
 def main():
-    N=100
-    for x in xrange(1,N):
-        y = x+1
-        z = y+1
-        while (z <= N):
-            while (z * z < x * x + y * y ):
-                z = z + 1
-                if (z * z == x * x + y * y) and (z <= N):
-                    print z # use x, y, z, (y-z)*(y-z) 
-                    y = y + 1
+    N=10
+    for n in xrange(1,N,2):
+        for m in xrange(1,n,2):
+            print n,m
 
 if __name__ == '__main__':
     main()
