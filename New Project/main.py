@@ -1,22 +1,13 @@
-# Hello World program in Python
+    # Open a file
+    fo = open("foo.txt", "w+")
 
-import math                                                                
+    for n in xrange(1,N,2): # odd number
+        for m in xrange(1,n,2): # odd number less than n
+            (a,b,c)=(n*m, (n+m)*(n-m)/2, (n+m)*(n+m)/2-n*m)
+            if (n-m-2*m*m < 0):
+                (a,b)=(b,a) # swap a,b
+            if (fractions.gcd(m,n) == 1): # prime
+                fo.write("%d;%d;%d\n" % (a,b,c))
 
-N=5000
-
-def pythagorean_triples(n):                                                
-    a, b, c, d = 1, 3, 0, 0
-    while (c < n) and (d<=1000):                                                            
-        a_ = (a * b) + a                                                    
-        c = math.sqrt(a_**2 + b**2)   
-        d=a_+b+ int(c)
-        
-        if c == int(c):                                                    
-            yield b, a_, int(c), d                               
-        a += 1                                                              
-        b += 2                                                              
- 
-if __name__ == '__main__':                                                  
-    import sys                                                              
-    for pt in pythagorean_triples(N):                        
-        print(pt)
+    # Close opend file
+    fo.close()
